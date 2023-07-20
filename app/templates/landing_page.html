@@ -5,8 +5,9 @@
         <div>{{b.category}}</div>
         <div>{{b.desc}}</div>
         {% for r in b.reviews %}
-            <div>{{r.user.name}}</div>
+            <div>{{r.users.name}}</div>
             <div>{{r.message}} </div>
+            <div>----------------------</div>
         {% endfor %}
     {% endfor %}
 
