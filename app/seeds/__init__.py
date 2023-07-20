@@ -2,7 +2,7 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .reviews import seed_reviews, undo_reviews
 from .businesses import seed_businesses, undo_businesses
-from app.models.db import db, environment, SCHEMA
+from app.models.db import db
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`

@@ -1,17 +1,17 @@
-from app.models import db, Business, environment, SCHEMA
+from app.models import db, Business
 from sqlalchemy.sql import text
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_businesses():
     buis1 = Buisness(
-        name="Chuck E Cheese"
-        category="American"
+        name="Chuck E Cheese",
+        category="American",
         desc="Chuck E. Cheese is a delightful and entertaining family-oriented restaurant and entertainment center that stands as a beacon of joy and amusement for people of all ages. Named after its charming and lovable mascot, Chuck E. Cheese, the establishment is an absolute treasure trove of fun and excitement, offering an array of activities and attractions that are sure to leave visitors both young and old with unforgettable memories."
     )
     buis2 = Buisness(
-        name="Monterreys"
-        category="Mexican"
+        name="Monterreys",
+        category="Mexican",
         desc="A diverse menu that includes a variety of traditional dishes from Mexico"
     )
     db.session.add(demo)

@@ -11,9 +11,6 @@ business_routes = Blueprint('business', __name__)
 @business_routes.route('')
 def get_all_businesses():
     buis_list = Business.query.all()
-    new_lst = []
-    for bis in buis_list
-        bis
     print(buis_list)
 
     return render_template('landing_page.html', buis=buis_list)
@@ -27,7 +24,7 @@ def create_new_buis():
         data = form.data
         new_buis = Business(
             name = data['name'],
-            category = data['category']
+            category = data['category'],
             owner_id = 1
         )
         db.session.commit()

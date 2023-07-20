@@ -10,4 +10,4 @@ class Review(db.Model):
     business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'), nullable=False)
 
     user = db.relationship("User", back_populates="reviews")
-    businesses = db.relationship("Businesses", back_populates=reviews)
+    businesses = db.relationship("Businesses", back_populates="reviews")
