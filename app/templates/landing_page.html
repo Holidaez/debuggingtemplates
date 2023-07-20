@@ -1,0 +1,13 @@
+{% block content %}
+
+    {% for b in buis %}
+        <div>{{b.name}}</div>
+        <div>{{b.category}}</div>
+        <div>{{b.desc}}</div>
+        {% for r in b.reviews %}
+            <div>{{r.user.name}}</div>
+            <div>{{r.message}} </div>
+        {% endfor %}
+    {% endfor %}
+
+{% endblock content %}

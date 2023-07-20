@@ -1,0 +1,15 @@
+{% block content %}
+    <form action="/api/buisness/new" method="post">
+        {{form.csrf_token}}
+        <p>
+            {{form.name.label}}
+            {{form.name()}}
+
+            {{form.category.label}}
+            {{form.category()}}
+
+            {{form.submit()}}
+
+        </p>
+    </form>
+{% endblock content %}
