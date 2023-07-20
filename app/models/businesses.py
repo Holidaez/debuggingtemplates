@@ -13,10 +13,4 @@ class Business(db.Model):
     reviews = db.relationship("Review", back_populates="business")
     owner = db.relationship("User", back_populates="locations")
 
-    def to_dict():
-        return {
-            "id":self.id,
-            "name":self.name
-            "category":self.category
-            "desc":self.desc
-        }
+   

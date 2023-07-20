@@ -1,4 +1,4 @@
-from app.models import db, Review, environment, SCHEMA
+from app.models import db, Review
 from sqlalchemy.sql import text
 
 
@@ -6,12 +6,12 @@ from sqlalchemy.sql import text
 def seed_reviews():
     rev1 = Review(
         message = "This was awesome",
-        user_id = 2
+        user_id = 2,
         business_id = 1
     )
     rev3 = Review(
         message = "This stinks",
-        user_id = 3
+        user_id = 3,
         business_id = 1
     )
     db.session.add(rev1)
