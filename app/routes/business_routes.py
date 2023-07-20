@@ -25,11 +25,11 @@ def create_new_buis():
         new_buis = Business(
             name = data['name'],
             category = data['category'],
-            desc = data['desc'],
+            desc= data['desc'],
             owner_id = 1
         )
         db.session.add(new_buis)
         db.session.commit()
-        return redirect('/api/business')
+        return redirect('/api/buisness')
 
     return render_template('new_business.html', form=form)
