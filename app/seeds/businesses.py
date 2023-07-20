@@ -4,19 +4,20 @@ from sqlalchemy.sql import text
 
 # Adds a demo user, you can add other users here if you want
 def seed_businesses():
-    buis1 = Buisness(
+    buis1 = Business(
         name="Chuck E Cheese",
         category="American",
-        desc="Chuck E. Cheese is a delightful and entertaining family-oriented restaurant and entertainment center that stands as a beacon of joy and amusement for people of all ages. Named after its charming and lovable mascot, Chuck E. Cheese, the establishment is an absolute treasure trove of fun and excitement, offering an array of activities and attractions that are sure to leave visitors both young and old with unforgettable memories."
+        desc="hi",
+        owner_id=1
     )
-    buis2 = Buisness(
+    buis2 = Business(
         name="Monterreys",
         category="Mexican",
-        desc="A diverse menu that includes a variety of traditional dishes from Mexico"
+        desc="A diverse menu that includes a variety of traditional dishes from Mexico",
+        owner_id=1
     )
-    db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(buis1)
+    db.session.add(buis2)
     db.session.commit()
 
 
@@ -27,9 +28,7 @@ def seed_businesses():
 # sqlite3 in development you need to instead use DELETE to remove all data and
 # it will reset the primary keys for you as well.
 def undo_businesses():
-    if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.businesses RESTART IDENTITY CASCADE;")
-    else:
-        db.session.execute(text("DELETE FROM businesses"))
+
+    db.session.execute(text("DELETE FROM businesses"))
 
     db.session.commit()

@@ -13,7 +13,7 @@ login = LoginManager(app)
 def load_user(id):
     return User.query.get(int(id))
 
-# app.cli.add_command(seed_commands)
+app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
 app.register_blueprint(business_routes.business_routes, url_prefix='/api/business')

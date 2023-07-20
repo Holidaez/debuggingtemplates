@@ -16,7 +16,7 @@ def get_all_businesses():
     return render_template('landing_page.html', buis=buis_list)
 
 
-@business_routes.route('/new')
+@business_routes.route('/new', methods=["POST","GET"])
 def create_new_buis():
     form = BusinessForm()
 
@@ -25,9 +25,11 @@ def create_new_buis():
         new_buis = Business(
             name = data['name'],
             category = data['category'],
+            desc = data['desc'],
             owner_id = 1
         )
+        db.session.add(new_buis)
         db.session.commit()
         return redirect('/api/business')
 
-    return render_template('new_buisness.html', form=form)
+    return render_template('new_business.html', form=form)

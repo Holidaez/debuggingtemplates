@@ -22,7 +22,7 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_reviews()
-    seed_businesses()
-    seed_users()
+    undo_businesses()
+    undo_users()
 
     # Add other undo functions here
