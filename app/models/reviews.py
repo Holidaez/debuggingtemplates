@@ -9,5 +9,7 @@ class Review(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'), nullable=False)
 
+
     users = db.relationship("User", back_populates="reviews")
     businesses = db.relationship("Business", back_populates="reviews")
+
