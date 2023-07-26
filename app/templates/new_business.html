@@ -4,13 +4,13 @@
         {{form.csrf_token}}
         <p>
             {{form.name.label}}
-            {{form.name()}}
+            {{form.name(required=False)}}
 
             {{form.category.label}}
-            {{form.category()}}
+            {{form.category(required=False)}}
 
             {{form.desc.label}}
-            {{form.desc()}}
+            {{form.desc(required=False)}}
 
             {{form.submit()}}
 
